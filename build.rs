@@ -1,3 +1,4 @@
+use std::path::PathBuf;
 use std::{ffi::OsString, io::Write, path::Path};
 
 fn get_lib_name() -> &'static str {
@@ -14,9 +15,8 @@ fn get_lib_name() -> &'static str {
 
 fn main() {
     println!("cargo:rustc-link-lib={}", get_lib_name());
-    println!("cargo:rustc-link-lib={}", get_lib_name());
     let dir = std::env::var("CARGO_MANIFEST_DIR").unwrap();
-    let lib_dir = Path::new(&dir).join("lib\\nsight-aftermath\\lib\\x64\\");
+    let lib_dir = Path::new(&dir).join("lib\\nsight-aftermath\\lib\\x64");
 
     println!("cargo:rustc-link-search=native={}", lib_dir.display());
 }
