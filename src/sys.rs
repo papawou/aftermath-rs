@@ -3,7 +3,9 @@
 
 use std::ffi::{c_char, c_void};
 
-pub const GFSDK_Aftermath_Version_API: u32 = 0x0000214; // Version 2.20
+pub const GFSDK_Aftermath_Version_API: u32 = 0x0000217; // Version 2.23
+pub const GFSDK_Aftermath_GpuCrashDumpWatchedApiFlags_Vulkan: u32 = 0x2;
+pub const GFSDK_Aftermath_GpuCrashDumpFeatureFlags_Default: u32 = 0;
 
 pub type PFN_GFSDK_Aftermath_GpuCrashDumpCb = unsafe extern "C" fn(
     p_gpu_crash_dump: *const c_void,

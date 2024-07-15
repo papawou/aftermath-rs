@@ -32,8 +32,8 @@ impl Aftermath {
         unsafe {
             sys::GFSDK_Aftermath_EnableGpuCrashDumps(
                 sys::GFSDK_Aftermath_Version_API,
-                2, // Vulkan
-                0,
+                sys::GFSDK_Aftermath_GpuCrashDumpWatchedApiFlags_Vulkan,
+                sys::GFSDK_Aftermath_GpuCrashDumpFeatureFlags_Default,
                 callbacks::GpuCrashDumpCallback,
                 callbacks::ShaderDebugInfoCallback,
                 callbacks::GpuCrashDumpDescriptionCallback,
